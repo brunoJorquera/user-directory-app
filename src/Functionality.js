@@ -6,7 +6,7 @@ export default function Functionality(props) {
     return (
         <div className="obama">
             {
-                data.filter(item => item.id === props.cardNumber)
+                data.filter(( item ) => item.id === props.cardNumber)
                 .map(item =>
                     <div key={item.id}> 
                         <div className="id-check">
@@ -18,8 +18,8 @@ export default function Functionality(props) {
                             <h3>Job Title:<span> {item.title}</span> </h3>
                             <h3>Employer:<span> {item.employer}</span> </h3>
                         </div>
+                        <h3 className="fave">Favorite Movies:</h3>
                         <div className="movie">
-                        <h3>Favorite Movies:</h3>
                             <ol>
                                 <li >{item.favoriteMovies[0]}</li>
                                 <li >{item.favoriteMovies[1]}</li>

@@ -88,7 +88,8 @@ header{
   display: flex;
   justify-content: flex-start;
   padding: 0 0 7% 10%;
-  text-decoration: underline var(--blue);
+  text-decoration: underline var(--blue) 3px;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
 span{
@@ -104,9 +105,27 @@ span{
 
 .movie{
   position: relative;
+  width: 80%;
+  height: calc(100vh - 70%);
+  padding: 0 0 5% 20%;
+}
+
+.fave{
+  position: relative;
   width: 100%;
   height: calc(100vh - 70%);
-  padding: 0 0 5% 10%;
+  padding-left: 10%;
+}
+
+li{
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 70%);
+  padding: 1%;
+}
+
+li::marker{
+margin-left: 25%;
 }
 
 button{
