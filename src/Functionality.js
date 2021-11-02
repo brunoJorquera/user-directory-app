@@ -1,36 +1,43 @@
-import React from 'react'
-import { data } from './data'
+//hold the functions (buttons, edit, delete, new)
+import React, { useState } from 'react'
+import {data} from './data'
+
 
 export default function Functionality(props) {
 
+    
+    
+  
+
     return (
-        <div className="obama">
+        <div>
             {
-                data.filter(( item ) => item.id === props.cardNumber)
-                .map(item =>
-                    <div key={item.id}> 
-                        <div className="id-check">
-                            <h2>{item.id}/{data.length}</h2>
-                        </div>
-                        <h2 className="nomen">{item.name.first} {item.name.last}</h2>
-                        <div className="emp">
-                            <h3>From:<span> {item.city}, {item.country}</span></h3>
-                            <h3>Job Title:<span> {item.title}</span> </h3>
-                            <h3>Employer:<span> {item.employer}</span> </h3>
-                        </div>
-                        <h3 className="fave">Favorite Movies:</h3>
-                        <div className="movie">
-                            <ol>
-                                <li >{item.favoriteMovies[0]}</li>
-                                <li >{item.favoriteMovies[1]}</li>
-                                <li >{item.favoriteMovies[2]}</li>
-                            </ol>
-                        </div>
+                data
+                .filter(item => item.id === props.cardNumber)
+                .map(item => 
+
+                
+                <div key={item.id}>
+                    <div className="user-id-number">
+                        <h2 className="user-number">{item.id}/{data.length}</h2>
                     </div>
-            )}
+                    <div className="content">
+                        <h1 className="name">{item.name.first} {item.name.last}</h1>
+                        <h3 className="location">From: <span>{item.city}, {item.country}</span> </h3>
+                        <h3 className="job">Job Title: <span>{item.title}</span> </h3>
+                        <h3 className="employeer">Employer: <span>{item.employer}</span> </h3>
+                        <br/>
+                        <h3>Favorite Movies:</h3>
+                        <ol>
+                            <li> {item.favoriteMovies[0]}</li>
+                            <li> {item.favoriteMovies[1]}</li>
+                            <li> {item.favoriteMovies[2]}</li>
+                        </ol>
+                    </div>
+                </div>,
+                
+                )
+            }
         </div>
     )
 }
-
-
-

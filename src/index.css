@@ -1,25 +1,76 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap');
 
-:root{
+:root {
   --blue: #34A5DA;
   --black: #222222;
-  --white: #ebebeb;
-  --font: 'IBM Plex Sans', sans-seriff;
+  --white: #EBEBEB;
+  --font: 'IBM Plex Sans', sans-serif;
 }
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: var(--font);
 }
 
-header{
+body {
+  position: relative;
+}
+
+header {
   background-color: var(--blue);
-  height: 80px;
+  height: 60px;
   display: flex;
   align-items: center;
 }
+
+.brand {
+  margin-left: 10%;
+}
+
+.container {
+  width: 100%;
+  height: calc(100vh - 60px);
+  background-color: var(--black);
+  display: flex;
+  align-items: center;
+}
+
+.powder {
+  width: 80%;
+  height: 70%;
+  margin: 0 auto;
+  background-color: var(--white);
+  position: relative;
+}
+
+.content {
+  position: relative;
+  padding: 10px 30px;
+}
+
+.name {
+  text-decoration: underline;
+  text-decoration-color: var(--blue);
+  margin-bottom: 16px;
+}
+
+.location, .job, .employeer {
+  margin-bottom: 16px;
+  
+}
+
+ol {
+  position: relative;
+  margin-top: 2px;
+  left: 50px
+}
+
+span {
+  font-weight: 300;
+}
+
 
 
 .previous, .next {
@@ -29,119 +80,51 @@ header{
   cursor: pointer;
 }
 
-.home{
-  margin-left: 5% ;
+.user-id-number {
+  width: 100%;
+  position: relative;
+  height: 30px;
 }
 
-.next{
+.user-number {
+  position: absolute;
+  right: 0;
+}
+
+.next {
   display: flex;
   justify-content: flex-end;
+  text-decoration: none;
 }
 
-.container{
-  width: 100%;
-  height: calc(100vh - 80px);
-  background-color: var(--black);
-  display: flex;
-  align-items: center;
-}
-
-.powder{
-  position: relative;
-  width: 70%;
-  height: 60%;
-  margin: 0 auto;
-  background-color: var(--white);
-}
-
-.controls{
+.controls {
   width: 100%;
   position: absolute;
   bottom: 0;
   background-color: var(--black);
   height: 50px;
-  color:var(--white);
+  color: var(--white);
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.obama{
-  position: relative;
-  width: 100%;
-  height: calc(100% - 50px);
-}
-
-.id-check{
-  position: relative;
-  width: 100%;
-  padding:0.5% 1% 0 0;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-}
-
-.nomen{
-  position: relative;
-  width: 100%;
-  height: 20px;
-  display: flex;
-  justify-content: flex-start;
-  padding: 0 0 7% 10%;
-  text-decoration: underline var(--blue) 3px;
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
-}
-
-span{
-  font-weight: 100;
-}
-
-.emp{
-  position: relative;
-  width: 100%;
-  height: calc(100vh - 70%);
-  padding: 0 0 5% 10%;
-}
-
-.movie{
-  position: relative;
-  width: 80%;
-  height: calc(100vh - 70%);
-  padding: 0 0 5% 20%;
-}
-
-.fave{
-  position: relative;
-  width: 100%;
-  height: calc(100vh - 70%);
-  padding-left: 10%;
-}
-
-li{
-  position: relative;
-  width: 100%;
-  height: calc(100vh - 70%);
-  padding: 1%;
-}
-
-li::marker{
-margin-left: 25%;
-}
-
-button{
+button {
   padding: 6px 20px;
   border-radius: 15px;
   background-color: var(--blue);
-  border:none;
-  color: white;
+  border: none;
+  color: var(--white);
   margin-right: 8px;
   cursor: pointer;
-
 }
 
-.btn-container{
+.control-btns {
   width: 200px;
   display: flex;
-  flex-direction: row;
   justify-content: space-evenly;
+}
+
+.arrow {
+  font-size: 1em;
 }
