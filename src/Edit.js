@@ -1,54 +1,59 @@
 import React, {useState } from 'react'
 import { data } from './data'
 
-export default function Edit(props) {
+export default function Edit( { setEditing , card } ) {
     
 
     return (
         <div className="content">
-                {data
-                .filter(item => item.id === props.cardNumber)
-                .map(item => 
-                    <div>
+               
+                    <div className="divy">
                         <form 
-                        className="firstNameInput"
+                        
                         onSubmit={(e) => {
                             e.preventDefault()
-                            props.setEditing(false)}
-                        }
-                        >
-                            <label> First Name <input type="text" placeholder={item.name.first} onChange={(e) => data[item.id - 1].name.first = e.target.value} /></label>
-                            
-                            <label> Last Name <input type="text" placeholder={item.name.last} onChange={(e) => data[item.id - 1].name.last = e.target.value } /></label>
-                            
-                            <label> Location <input type='text' placeholder={item.location} onChange={(e) => data[item.id - 1].location = e.target.value } /></label>
-            
-                            <label> Job Title <input type='text' placeholder={item.title} onChange={(e) => data[item.id - 1].title = e.target.value } /></label>
-                            
-                            <label> Employeer <input type='text' placeholder={item.employer} onChange={(e) => data[item.id - 1].employer = e.target.value } /></label>
+                            setEditing(false)
+                        }}>
+                            <div className="formy">
+                                <div className="lefty"> 
+                                
+                                    <label className="inner"> First Name <input type="text" placeholder={card.name.first} onChange={(e) => data[card.id - 1].name.first = e.target.value} /></label>
+                                    
+                                    <label className="inner"> Last Name <input type="text" placeholder={card.name.last} onChange={(e) => data[card.id - 1].name.last = e.target.value } /></label>
+                                    
+                                    <label className="inner"> City <input type='text' placeholder={card.city} onChange={(e) => data[card.id - 1].city = e.target.value } /></label>
 
-                            <label> Add Favorites Movies </label>
+                                    <label className="inner"> Country <input type='text' placeholder={card.country} onChange={(e) => data[card.id - 1].country = e.target.value } /></label>
 
-                            <ol>
+                                </div>
 
-                            <input type="text" placeholder={item.favoriteMovies[0]} 
-                                onChange={(e) => data[item.id - 1].favoriteMovies[0] = e.target.value }
-                            />
-                            
-                            <input type="text" placeholder={item.favoriteMovies[1]}
-                                onChange={(e) => data[item.id - 1].favoriteMovies[1] = e.target.value }
-                             />
-                            
-                            <input type="text" placeholder={item.favoriteMovies[2]} 
-                                onChange={(e) => data[item.id - 1].favoriteMovies[2] = e.target.value }
-                            />
-                            
-                            </ol>
+                                <div className="righty">
 
+                                <label className="inner"> Job Title <input type='text' placeholder={card.title} onChange={(e) => data[card.id - 1].title = e.target.value } /></label>
+                                
+                                <label className="inner"> Employeer <input type='text' placeholder={card.employer} onChange={(e) => data[card.id - 1].employer = e.target.value } /></label>
+
+                                    <label className="listy"> Add Favorites Movies 
+
+                                    <input type="text" placeholder={card.favoriteMovies[0]} 
+                                        onChange={(e) => data[card.id - 1].favoriteMovies[0] = e.target.value }
+                                    />
+                                    
+                                    <input type="text" placeholder={card.favoriteMovies[1]}
+                                        onChange={(e) => data[card.id - 1].favoriteMovies[1] = e.target.value }
+                                    />
+                                    
+                                    <input type="text" placeholder={card.favoriteMovies[2]} 
+                                        onChange={(e) => data[card.id - 1].favoriteMovies[2] = e.target.value }
+                                    />
+
+                                    </label>
+
+                                </div>
+                            </div>
                         <button type="submit">Save</button>
                     </form>
-                </div>,
-                )}      
+                </div>
         </div>
     )
 }

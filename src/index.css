@@ -48,6 +48,7 @@ header {
 .content {
   position: relative;
   padding: 10px 30px;
+  height: 90%;
 }
 
 .name {
@@ -127,4 +128,62 @@ button {
 
 .arrow {
   font-size: 1em;
+}
+
+.divy{
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.formy{
+  position: relative;
+  height: 90%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+form{
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.lefty{
+  position: relative;
+  height: 100%;
+  width: 40%;
+}
+
+.righty{
+  position: relative;
+  height: 100%;
+  width: 40%;
+}
+
+label{
+  position: relative;
+  height: 20%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+input{
+  position: relative;
+  height: 50%;
+}
+
+.listy{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 34.5%;
 }

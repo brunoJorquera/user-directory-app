@@ -8,36 +8,28 @@ import Edit from './Edit';
 const Structure = () => {
 
     //variables 
-    let [cardNumber, setCardNumber] = useState(1);
+    let [cardNumber, setCardNumber] = useState(0);
+
     const [editing, setEditing] = useState(false)
-    const [cardsCopy, setCardsCopy] = useState(data)
+
+    const [cards, setCards] = useState(data)
 
 
     //stop counter going below 1 and above 25
-    if(cardNumber < data.length - data.length + 1) {
-        cardNumber = 1;
-    } else if(cardNumber > data.length) {
-        cardNumber = data.length;
+    if(cardNumber < cards.length - cards.length + 1) {
+        cardNumber = 0;
+    } else if(cardNumber + 1 > cards.length) {
+        setCardNumber((prevCardNumber) => prevCardNumber - 1)
     }
-
-    
 
     //DELETE CARD
-    function handleDelete() {
-        let currentIndex = cardNumber - 1;
-        
-        // console.log(data.splice(cardNumber, 1));
-        let cardsCopy = [...data]
-        cardsCopy.splice(currentIndex, 1)
-        console.log(currentIndex)
-        setCardsCopy(cardsCopy)
-
-        
+    const deleteCard = () => {
+        const cardsCopy = [...cards]
+        cardsCopy.splice(cardNumber, 1);
+        setCards(cardsCopy)
     }
 
-    //EDIT CARD
-
-
+ 
     return (
       <div className="App">
         <header>
@@ -46,14 +38,15 @@ const Structure = () => {
         <div className='container'>
             <div className="powder">
 
-                {editing ? <Edit cardNumber={cardNumber} setEditing={setEditing} />  : <Functionality className="display" cardNumber={cardNumber}  /> }
+                {editing ? <Edit cardNumber={cardNumber} setEditing={setEditing} card={cards[cardNumber]} />  :
+                 <Functionality className="display" cardNumber={cardNumber} card={cards[cardNumber]} cards={cards} /> }
 
 
                 
                 <div className="controls">
                     <h3
                     className='previous'
-                    onClick={() => setCardNumber(cardNumber-1)}
+                    onClick={() => setCardNumber(cardNumber - 1)}
                     > <MdArrowBackIosNew /> Previous </h3>
                     <div className='control-btns'>
                         <button
@@ -62,7 +55,7 @@ const Structure = () => {
                         >Edit</button>
                         <button
                         className="delete-btn"
-                        onClick={handleDelete}
+                        onClick={deleteCard}
                         >Delete</button>
                         <button>New</button>
                     </div>
